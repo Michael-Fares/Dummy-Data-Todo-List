@@ -26,18 +26,26 @@ const logTodos = () => {
 
 
 const populateTodos = () => {
+// iterate over the todo array but only display 20 todos at a time by dividing 200 by 10
+for(i=0; i < (arrayOfTodos.length)/10; i++) {
 // the list needed to be defined INSIDE the function in order for it to work
 // create var called list to store the ol
 const list = document.getElementById('todo-list')
 // create an li element and store in the var listItem
 const listItem = document.createElement('li')
 // create a "floating?" text node that is equal to the title of the task the todo list and call it task
-const task = document.createTextNode(arrayOfTodos[0].title)
+const task = document.createTextNode(arrayOfTodos[i].title)
 // use the appendChild method to stick the text node to the li
 listItem.appendChild(task)
 //Use the append child method again to stick the li to the ol
 list.appendChild(listItem)
-logTodos()
+// uncompleted items are red, completed items are blue
+if (arrayOfTodos[i].completed === false) {
+  console.log(arrayOfTodos[i].id, "NOT FINISHED!")
+  listItem.style.color = "tomato"
+} else {
+  listItem.style.color = "blue"
 }
-
+}
+}
 

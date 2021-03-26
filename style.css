@@ -1,3 +1,27 @@
-li {
-  color:blue;
+body {
+  background-color: beige;
 }
+ol {
+ margin: 2% 33%;
+ font-family: 'Indie Flower', cursive;
+}
+button {
+margin: 1%;
+padding: 1%; 
+font-family: 'Indie Flower', cursive;
+border: none;
+background-color: white;
+font-size: 20px;
+}
+.buttonbox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+@media only screen and (max-width: 600px) {
+  ol {
+    margin: 10% auto;
+  }
+}
+
