@@ -9,7 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- label and number field -->
+  <label for="userId">Enter or select user id</label>
+  <input type="number" min="1" max="10" id="userId">
+  <!-- end label and number field -->
+  
   <div class="buttonbox">
+  <button onclick="getUserID()">Fetch Todos by User ID</button>
+  <button onclick="showIncomplete()">Show Incomplete Todos</button> 
+  <button onclick="clear()">Clear</button>
   <button onclick="fetchTodos()">Fetch Todos</button>
  <button onclick="logTodos()">Log Todos</button>
  <button onclick="populateTodos()">Populate Todos</button>

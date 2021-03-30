@@ -49,3 +49,72 @@ if (arrayOfTodos[i].completed === false) {
 }
 }
 
+// filtering branch
+const getUserID = () => {
+//clear the previous todos by removing all li as long as there is an ol
+const ol = document.querySelector('ol')
+if (ol) {
+  while (ol.firstChild) {
+    ol.removeChild(ol.firstChild)
+  }
+}
+// populate with user ID that matches the number inputted
+console.log('Number entered', document.getElementById('userId').value)
+// store filtered in a global variable to be accessed by another function with this.??
+globalThis.filtered = arrayOfTodos.filter(num => num.userId == document.getElementById('userId').value)
+// I needed == for this. === did not work.
+console.log(filtered)
+// loop over filtered array to display it
+for (i=0; i < (filtered.length); i++) {
+const list = document.getElementById('todo-list')
+// create an li element and store in the var listItem
+const listItem = document.createElement('li')
+// create a "floating?" text node that is equal to the title of the task the todo list and call it task
+const task = document.createTextNode(filtered[i].title)
+// use the appendChild method to stick the text node to the li
+listItem.appendChild(task)
+//Use the append child method again to stick the li to the ol
+list.appendChild(listItem)
+
+if (filtered[i].completed === false) {
+  listItem.style.color = "tomato"
+} else {
+  listItem.style.color = "blue"
+}
+
+}
+// store the CURRENTLY filtered todos in a variable
+}
+
+
+const showIncomplete = () => {
+  const ol = document.querySelector('ol')
+if (ol) {
+  while (ol.firstChild) {
+    ol.removeChild(ol.firstChild)
+  }
+}
+for(i=0; i < filtered.length; i++) {
+    if(filtered[i].completed === false) {
+const list = document.getElementById('todo-list')
+// create an li element and store in the var listItem
+const listItem = document.createElement('li')
+// create a "floating?" text node that is equal to the title of the task the todo list and call it task
+const task = document.createTextNode(filtered[i].title)
+// use the appendChild method to stick the text node to the li
+listItem.appendChild(task)
+//Use the append child method again to stick the li to the ol
+list.appendChild(listItem)
+listItem.style.color = "tomato"
+    }
+  }
+}
+
+// why dosent this work?? // this is the only thing I could not get to work! 
+const clear = () => {
+  for(i=0; i < filtered.length; i++) {
+    document.getElementsByTagName('li').remove()
+  } 
+}
+
+
