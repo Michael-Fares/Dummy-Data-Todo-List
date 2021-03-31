@@ -39,12 +39,13 @@ const task = document.createTextNode(arrayOfTodos[i].title)
 listItem.appendChild(task)
 //Use the append child method again to stick the li to the ol
 list.appendChild(listItem)
-// uncompleted items are red, completed items are blue
+// uncompleted items are red, completed items are blue and crossed out
 if (arrayOfTodos[i].completed === false) {
   console.log(arrayOfTodos[i].id, "NOT FINISHED!")
   listItem.style.color = "tomato"
 } else {
   listItem.style.color = "blue"
+  listItem.style.textDecoration = "line-through"
 }
 }
 }
