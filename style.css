@@ -12,11 +12,14 @@ font-family: 'Indie Flower', cursive;
 border: none;
 background-color: white;
 font-size: 20px;
-flex-wrap: wrap;
 }
 .buttonbox {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+label {
+  margin-left: 30px;
 }
 
 

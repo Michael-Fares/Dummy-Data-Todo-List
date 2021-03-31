@@ -3,10 +3,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dummy To-Do List</title>
-  <script src="main.js"></script>
-  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- label and number field -->
@@ -16,8 +15,8 @@
   
   <div class="buttonbox">
   <button onclick="getUserID()">Fetch Todos by User ID</button>
-  <button onclick="showIncomplete()">Show Incomplete Todos</button> 
-  <button onclick="clear()">Clear</button>
+  <button onclick="showIncomplete()">Show Incomplete Only</button> 
+  <button onclick="clearScreen()">Clear</button>
   <button onclick="fetchTodos()">Fetch Todos</button>
  <button onclick="logTodos()">Log Todos</button>
  <button onclick="populateTodos()">Populate Todos</button>
@@ -25,5 +24,6 @@
  <ol id="todo-list">
    <!-- LIs will go here -->
  </ol>
+ <script src="main.js"></script>
 </body>
 </html>

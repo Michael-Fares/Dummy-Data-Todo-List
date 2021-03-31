@@ -39,12 +39,13 @@ const task = document.createTextNode(arrayOfTodos[i].title)
 listItem.appendChild(task)
 //Use the append child method again to stick the li to the ol
 list.appendChild(listItem)
-// uncompleted items are red, completed items are blue
+// uncompleted items are red, completed items are blue and crossed out
 if (arrayOfTodos[i].completed === false) {
   console.log(arrayOfTodos[i].id, "NOT FINISHED!")
   listItem.style.color = "tomato"
 } else {
   listItem.style.color = "blue"
+  listItem.style.textDecoration = "line-through"
 }
 }
 }
@@ -80,6 +81,7 @@ if (filtered[i].completed === false) {
   listItem.style.color = "tomato"
 } else {
   listItem.style.color = "blue"
+  listItem.style.textDecoration = "line-through"
 }
 
 }
@@ -109,12 +111,13 @@ listItem.style.color = "tomato"
     }
   }
 }
-
-// why dosent this work?? // this is the only thing I could not get to work! 
-const clear = () => {
-  for(i=0; i < filtered.length; i++) {
-    document.getElementsByTagName('li').remove()
-  } 
-}
-
+ 
+const clearScreen = () => {
+  const ol = document.querySelector('ol')
+  if (ol) {
+    while (ol.firstChild) {
+      ol.removeChild(ol.firstChild)
+    }
+  }
+  }
 
