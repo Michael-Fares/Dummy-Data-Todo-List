@@ -59,10 +59,13 @@ if (ol) {
     ol.removeChild(ol.firstChild)
   }
 }
+// I had to use globalThis.filtered to make the "filtered" variable accesible global. Taking it out of the function broke the code for some reason
+globalThis.filtered = arrayOfTodos.filter(num => num.userId == document.getElementById('userId').value)
+
 // populate with user ID that matches the number inputted
 console.log('Number entered', document.getElementById('userId').value)
 // store filtered in a global variable to be accessed by another function with this.??
-globalThis.filtered = arrayOfTodos.filter(num => num.userId == document.getElementById('userId').value)
+
 // I needed == for this. === did not work.
 console.log(filtered)
 // loop over filtered array to display it
@@ -85,7 +88,6 @@ if (filtered[i].completed === false) {
 }
 
 }
-// store the CURRENTLY filtered todos in a variable
 }
 
 
