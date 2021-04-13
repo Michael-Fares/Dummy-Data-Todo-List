@@ -36,17 +36,43 @@ const listItem = document.createElement('li')
 // create a "floating?" text node that is equal to the title of the task the todo list and call it task
 const task = document.createTextNode(arrayOfTodos[i].title)
 // use the appendChild method to stick the text node to the li
+
+const checkbox = document.createElement('input')
+checkbox.type = "checkbox"
+checkbox.style.cursor = "pointer"
+checkbox.style.marginLeft = "10px"
+checkbox.style.marginRight = "10px"
+checkbox.classList.add('checkbox')
+
+//add an event listener to the checkbox so that when clicked it calls a funciton that toggle true/false on arrayobject.completed
+
+checkbox.addEventListener('click', function() { 
+  const done = arrayOfTodos[i].completed
+    if (done) {
+      done === false
+      console.log(done)
+    }
+  }
+)
+
+listItem.appendChild(checkbox)
 listItem.appendChild(task)
 //Use the append child method again to stick the li to the ol
 list.appendChild(listItem)
-// uncompleted items are red, completed items are blue and crossed out
+// create a checkbox for each li
+
+
+
+//uncompleted items are red, completed items are blue and crossed out
 if (arrayOfTodos[i].completed === false) {
   console.log(arrayOfTodos[i].id, "NOT FINISHED!")
   listItem.style.color = "tomato"
 } else {
   listItem.style.color = "blue"
   listItem.style.textDecoration = "line-through"
+
 }
+
 }
 }
 
@@ -75,10 +101,17 @@ const list = document.getElementById('todo-list')
 const listItem = document.createElement('li')
 // create a "floating?" text node that is equal to the title of the task the todo list and call it task
 const task = document.createTextNode(filtered[i].title)
-// use the appendChild method to stick the text node to the li
+const checkbox = document.createElement('input')
+checkbox.type = "checkbox"
+checkbox.style.cursor = "pointer"
+checkbox.style.marginLeft = "10px"
+checkbox.style.marginRight = "10px"
+checkbox.classList.add('checkbox')
+listItem.appendChild(checkbox)
 listItem.appendChild(task)
 //Use the append child method again to stick the li to the ol
 list.appendChild(listItem)
+// create a checkbox for each li
 
 if (filtered[i].completed === false) {
   listItem.style.color = "tomato"
@@ -106,10 +139,19 @@ const listItem = document.createElement('li')
 // create a "floating?" text node that is equal to the title of the task the todo list and call it task
 const task = document.createTextNode(filtered[i].title)
 // use the appendChild method to stick the text node to the li
+const checkbox = document.createElement('input')
+checkbox.type = "checkbox"
+checkbox.style.cursor = "pointer"
+checkbox.style.marginLeft = "10px"
+checkbox.style.marginRight = "10px"
+checkbox.classList.add('checkbox')
+listItem.appendChild(checkbox)
 listItem.appendChild(task)
 //Use the append child method again to stick the li to the ol
 list.appendChild(listItem)
+// create a checkbox for each li
 listItem.style.color = "tomato"
+
     }
   }
 }
@@ -122,4 +164,3 @@ const clearScreen = () => {
     }
   }
   }
-

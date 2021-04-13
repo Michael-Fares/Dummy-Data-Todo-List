@@ -3,16 +3,27 @@ body {
   font-family: 'Indie Flower', cursive;
 }
 ol {
- margin: 2% 33%;
+ margin: 2% 25%;
 }
-button {
+.buttonbox button {
 margin: 1%;
 padding: 1%; 
 font-family: 'Indie Flower', cursive;
 border: none;
 background-color: white;
 font-size: 20px;
+cursor: pointer;
+transition: ease-in all 0.5s;
 }
+.buttonbox button:hover {
+  margin: 1%;
+  padding: 1%; 
+  font-family: 'Indie Flower', cursive;
+  border: none;
+  background-color: yellow;
+  font-size: 20px;
+  cursor: pointer;
+  }
 .buttonbox {
   display: flex;
   justify-content: space-evenly;
@@ -21,7 +32,6 @@ font-size: 20px;
 label {
   margin-left: 30px;
 }
-
 
 @media only screen and (max-width: 600px) {
   ol {
