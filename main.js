@@ -45,16 +45,6 @@ checkbox.style.marginRight = "10px"
 checkbox.classList.add('checkbox')
 
 //add an event listener to the checkbox so that when clicked it calls a funciton that toggle true/false on arrayobject.completed
-
-checkbox.addEventListener('click', function() { 
-  const done = arrayOfTodos[i].completed
-    if (done) {
-      done === false
-      console.log(done)
-    }
-  }
-)
-
 listItem.appendChild(checkbox)
 listItem.appendChild(task)
 //Use the append child method again to stick the li to the ol
@@ -70,11 +60,10 @@ if (arrayOfTodos[i].completed === false) {
 } else {
   listItem.style.color = "blue"
   listItem.style.textDecoration = "line-through"
-
+}
+}
 }
 
-}
-}
 
 // filtering branch
 const getUserID = () => {
@@ -113,13 +102,12 @@ listItem.appendChild(task)
 list.appendChild(listItem)
 // create a checkbox for each li
 
-if (filtered[i].completed === false) {
-  listItem.style.color = "tomato"
-} else {
-  listItem.style.color = "blue"
-  listItem.style.textDecoration = "line-through"
-}
-
+  if (filtered[i].completed === false) {
+    listItem.style.color = "tomato"
+  } else {
+    listItem.style.color = "blue"
+    listItem.style.textDecoration = "line-through"
+  }
 }
 }
 
